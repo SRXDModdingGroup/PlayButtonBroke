@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net472</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Reference Include="0Harmony, Version=2.7.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\..\Libs\0Harmony.dll</HintPath>
+      </Reference>
+      <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\..\Libs\Assembly-CSharp.dll</HintPath>
+      </Reference>
+      <Reference Include="BepInEx, Version=5.4.18.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\..\Libs\BepInEx.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\..\Libs\UnityEngine.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\..\Libs\UnityEngine.CoreModule.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+      <Exec Command="copy &quot;$(TargetPath)&quot; &quot;D:\SteamLibrary\steamapps\common\Spin Rhythm\BepInEx\plugins&quot; /Y&#xA;" />
+    </Target>
+
+</Project>
